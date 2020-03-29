@@ -1,0 +1,12 @@
+version: '2.1'
+
+volumes:
+  opinion-reviews-scrapers:
+
+
+services:
+  opinion-reviews-scrapers:
+    build: .
+    restart: always
+    env_file:
+      - .env

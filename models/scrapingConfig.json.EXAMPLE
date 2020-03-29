@@ -1,0 +1,7 @@
+{
+  "url_base": "http://localhost:8000",
+  "scraper_id": "scraperTestba336a",
+  "device_id": "abcdev313a",
+   "app_id": "elmundo",
+   "newspaper": "elmundo"
+}
