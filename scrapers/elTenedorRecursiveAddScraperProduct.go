@@ -1,24 +1,23 @@
 package scrapers
 
 import (
-	"opinion-reviews-scraper/models"
 	"fmt"
-	"strings"
-	"time"
-
 	"github.com/gocolly/colly"
 	log "github.com/sirupsen/logrus"
+	"opinion-reviews-scraper/models"
+	"strings"
+	"time"
 )
 
-type TripAdvisorRecursiveAddScraperProduct struct {
+type ElTenedorRecursiveAddScraperProduct struct {
 	Config models.ScrapingConfig
 	Index  models.ScrapingIndex
 }
 
-func (scraper TripAdvisorRecursiveAddScraperProduct) ScrapReviewsInItems(baseUrl string, scrapingIndex *models.ScrapingIndex) {
+func (scraper ElTenedorRecursiveAddScraperProduct) ScrapReviewsInItems(baseUrl string, scrapingIndex *models.ScrapingIndex) {
 	//results := []models.ReviewScraped{}
 	urlsPending := []UrlNew{}
-	reviewsScraper := TripAdvisorReviewsScraperInProduct{scraper.Config}
+	reviewsScraper := ElTenedorReviewsScraper{scraper.Config}
 
 	// Instantiate default collector
 	c := colly.NewCollector(
@@ -26,28 +25,25 @@ func (scraper TripAdvisorRecursiveAddScraperProduct) ScrapReviewsInItems(baseUrl
 	//colly.AllowedDomains("https://elpais.com/"),
 	)
 	c.OnHTML("a[class]", func(e *colly.HTMLElement) {
-		if (e.Attr("class") == "respListingPhoto" && strings.Contains(e.Attr("href"), "Hotel_Review-")) || e.Attr("class") == "_15_ydu6b" {
 			url := e.Attr("href")
-			date := time.Now()
-			urlScrap := UrlNew{url: "https://tripadvisor.es" + url, date: date}
-			fmt.Println(url)
-			urlsPending = append(urlsPending, urlScrap)
-		}
+			if strings.Contains(url, "/restaurante/") {
+				date := time.Now()
+				urlScrap := UrlNew{url: "https://www.eltenedor.es" + url, date: date}
+				fmt.Println(url)
+				urlsPending = append(urlsPending, urlScrap)
+			}
 	})
 
-	c.OnHTML("a[href]", func(e *colly.HTMLElement) {
-		if e.Text == "Siguiente" {
-			url := e.Attr("href")
-			c.Visit(url)
-		}
-		if strings.Contains(e.Attr("class"),"nav next rndBtn ui_button primary taLnk") {
-			offset := e.Attr("data-offset")
-			ending := strings.Split(baseUrl, "&o=")[1]
-			baseUrl = strings.ReplaceAll(baseUrl,ending, "a"+offset)
-			c.Visit(baseUrl)
+	c.OnHTML("ul", func(e *colly.HTMLElement) {
+		if e.Attr("class")=="_1fOA6" {
+			e.ForEach("li", func(_ int, elem *colly.HTMLElement) {
+				elem.ForEach("a", func(_ int, elem2 *colly.HTMLElement) {
+					url := "https://www.eltenedor.es" + elem2.Attr("href") //strings.Replace(e.Attr("href"), "/", "", 1)
+					c.Visit(url)
+				})
+			})
 		}
 	})
-
 	// Before making a request print "Visiting ..."
 	c.OnRequest(func(r *colly.Request) {
 		log.Info("Visiting\n", r.URL.String())
@@ -98,7 +94,7 @@ func (scraper TripAdvisorRecursiveAddScraperProduct) ScrapReviewsInItems(baseUrl
 
 }
 
-func (scraper TripAdvisorRecursiveAddScraperProduct) scrapAllReviewsInUrl(urlbase UrlNew, reviewsScraper *TripAdvisorReviewsScraperInProduct, out chan []models.ReviewScraped) []models.ReviewScraped {
+func (scraper ElTenedorRecursiveAddScraperProduct) scrapAllReviewsInUrl(urlbase UrlNew, reviewsScraper *ElTenedorReviewsScraper, out chan []models.ReviewScraped) []models.ReviewScraped {
 	results := reviewsScraper.ScrapPage(urlbase)
 
 	out <- results

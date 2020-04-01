@@ -16,12 +16,23 @@ func (mainScraper MainScraperAllReviewSources) StartScraping(config models.Scrap
 	scraperEbay := EbayRecursiveAddScraperProduct{Config: config}
 	scraperDecathlon := DecathlonRecursiveAddScraperProduct{Config: config}
 	scrapertripadvisor := TripAdvisorRecursiveAddScraperProduct{Config: config}
+	scrapertripadvisorRestaurants := TripAdvisorRecursiveAddScraperProduct{Config: config}
+	scraperEltenedor := ElTenedorRecursiveAddScraperProduct{Config: config}
 
 	scrapAll := utils.StringInSlice("all", config.Scrapers)
 
 	log.Info("using historicScrapers:")
 	for {
 		var wg sync.WaitGroup
+
+		if utils.StringInSlice("eltenedor", config.Scrapers) || scrapAll {
+			go mainScraper.ScrapOneIteration(scraperEltenedor, "eltenedor", config, &wg)
+			wg.Add(1)
+		}
+		if utils.StringInSlice("tripadvisor-restaurant", config.Scrapers) || scrapAll {
+			go mainScraper.ScrapOneIteration(scrapertripadvisorRestaurants, "tripadvisor-restaurant", config, &wg)
+			wg.Add(1)
+		}
 
 		if utils.StringInSlice("ebay", config.Scrapers) || scrapAll {
 			go mainScraper.ScrapOneIteration(scraperEbay, "ebay", config, &wg)

@@ -36,8 +36,8 @@ func (scraper *TripAdvisorReviewsScraperInProduct) ScrapPage(urlNew UrlNew) []mo
 		RandomDelay: 1 * time.Second,
 	})
 
-	c.OnHTML("div[data-test-target]", func(e *colly.HTMLElement) {
-		if e.Attr("data-test-target") == "HR_CC_CARD" {
+	c.OnHTML("div", func(e *colly.HTMLElement) {
+		if e.Attr("data-test-target") == "HR_CC_CARD" || e.Attr("class") == "review-container" {
 			result := models.ReviewScraped{}
 			text := ""
 			rateText := ""
@@ -47,6 +47,11 @@ func (scraper *TripAdvisorReviewsScraperInProduct) ScrapPage(urlNew UrlNew) []mo
 
 			e.ForEach("q", func(_ int, elem *colly.HTMLElement) {
 				text = elem.Text
+			})
+			e.ForEach("p", func(_ int, elem *colly.HTMLElement) {
+				if elem.Attr("class")=="partial_entry" {
+					text = elem.Text
+				}
 			})
 
 			e.ForEach("span[class]", func(_ int, elem *colly.HTMLElement) {
@@ -80,7 +85,11 @@ func (scraper *TripAdvisorReviewsScraperInProduct) ScrapPage(urlNew UrlNew) []mo
 			result.Date = date
 			result.Rate = RateTextToFloatTripAdvisor(rateText)
 			result.User = username
-			result.Source = "tripadvisor"
+			if strings.Contains(urlNew.url, "RestaurantSearch"){
+				result.Source = "tripadvisor-restaurant"
+			}else {
+				result.Source = "tripadvisor"
+			}
 			results = append(results, result)
 			log.Println("obtained new review by user " + username + " rate: " + rateText)
 
