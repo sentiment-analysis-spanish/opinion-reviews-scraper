@@ -4,11 +4,51 @@
   "device_id": "device_test",
   "app_id": "all",
   "scrapers": [
-    "decathlon",
-    "tripadvisor",
-    "ebay"  ],
+    "all"
+  ],
   "initial_urls": {
-    "tripadvisor":[
+    "eltenedor": [
+      "https://www.eltenedor.es/search/?cityId=328022",
+      "https://www.eltenedor.es/restaurantes/cataluna-b1869",
+      "https://www.eltenedor.es/restaurantes/valencia-c572981",
+      "https://www.eltenedor.es/restaurantes/castilla-la-mancha-b1867",
+      "https://www.eltenedor.es/restaurantes/canarias-b2028",
+      "https://www.eltenedor.es/restaurantes/bilbao-c55170",
+      "https://www.eltenedor.es/restaurantes/palma-de-mallorca-c412057",
+      "https://www.eltenedor.es/restaurantes/ibiza-b1893",
+      "https://www.eltenedor.es/restaurantes/murcia-c369124",
+      "https://www.eltenedor.es/restaurantes/galicia-b1872",
+      "https://www.eltenedor.es/restaurantes/castilla-y-leon-b1868",
+      "https://www.eltenedor.es/restaurantes/andalucia-b1862",
+      "https://www.eltenedor.es/restaurantes/pais-vasco-b1865",
+      "https://www.eltenedor.es/restaurantes/navarra-b1875",
+      "https://www.eltenedor.es/restaurantes/cantabria-b1866",
+      "https://www.eltenedor.es/restaurantes/lisboa-c665920",
+      "https://www.eltenedor.es/restaurantes/la-rioja-b1873"
+    ],
+    "tripadvisor-restaurant": [
+      "https://www.tripadvisor.es/RestaurantSearch?Action=PAGE&ajax=1&availSearchEnabled=true&sortOrder=relevance&geo=187497&itags=10591&cat=10655&eaterydate=2070_04_01&date=2070-04-02&time=20%3A00%3A00&people=2&o=a30",
+      "https://www.tripadvisor.es/RestaurantSearch?Action=PAGE&ajax=1&availSearchEnabled=true&sortOrder=popularity&geo=187514&itags=10591&eaterydate=2070_04_01&date=2030-04-02&time=20%3A00%3A00&people=2&o=a10",
+      "https://www.tripadvisor.es/RestaurantSearch?Action=FILTER&ajax=1&availSearchEnabled=true&sortOrder=relevance&geo=187529&itags=10591&cat=10655&eaterydate=2070_04_01&date=2070-04-02&time=20%3A00%3A00&people=2",
+      "https://www.tripadvisor.es/RestaurantSearch?Action=FILTER&ajax=1&availSearchEnabled=true&sortOrder=relevance&geo=187471&itags=10591&cat=10655&eaterydate=2070_04_01&date=2070-04-02&time=20%3A00%3A00&people=2",
+      "https://www.tripadvisor.es/RestaurantSearch?Action=FILTER&ajax=1&availSearchEnabled=true&sortOrder=relevance&geo=187438&itags=10591&cat=10655&eaterydate=2070_04_01&date=2070-04-02&time=20%3A00%3A00&people=2",
+      "https://www.tripadvisor.es/RestaurantSearch?Action=FILTER&ajax=1&availSearchEnabled=true&sortOrder=relevance&geo=187463&itags=10591&cat=10655&eaterydate=2070_04_01&date=2070-04-02&time=20%3A00%3A00&people=2",
+      "https://www.tripadvisor.es/RestaurantSearch?Action=FILTER&ajax=1&availSearchEnabled=true&sortOrder=relevance&geo=1064230&itags=10591&cat=10655&eaterydate=2070_04_01&date=2070-04-02&time=20%3A00%3A00&people=2",
+      "https://www.tripadvisor.es/RestaurantSearch?Action=FILTER&ajax=1&availSearchEnabled=true&sortOrder=relevance&itags=10591&cat=10655&eaterydate=2070_04_01&date=2070-04-02&time=20%3A00%3A00&people=2",
+      "https://www.tripadvisor.es/RestaurantSearch?Action=FILTER&ajax=1&availSearchEnabled=true&sortOrder=relevance&geo=187441&itags=10591&cat=10655&eaterydate=2070_04_01&date=2070-04-02&time=20%3A00%3A00&people=2",
+      "https://www.tripadvisor.es/RestaurantSearch?Action=FILTER&ajax=1&availSearchEnabled=true&sortOrder=relevance&geo=187439&itags=10591&cat=10655&eaterydate=2070_04_01&date=2070-04-02&time=20%3A00%3A00&people=2",
+      "https://www.tripadvisor.es/RestaurantSearch?Action=FILTER&ajax=1&availSearchEnabled=true&sortOrder=relevance&geo=187507&itags=10591&cat=10655&eaterydate=2070_04_01&date=2070-04-02&time=20%3A00%3A00&people=2",
+      "https://www.tripadvisor.es/RestaurantSearch?Action=FILTER&ajax=1&availSearchEnabled=true&sortOrder=relevance&geo=187448&itags=10591&cat=10655&eaterydate=2070_04_01&date=2070-04-02&time=20%3A00%3A00&people=2",
+      "https://www.tripadvisor.es/RestaurantSearch?Action=FILTER&ajax=1&availSearchEnabled=true&sortOrder=relevance&geo=187454&itags=10591&cat=10655&eaterydate=2070_04_01&date=2070-04-02&time=20%3A00%3A00&people=2"
+    ],
+    "tripadvisor": [
+      "https://www.tripadvisor.es/Hotels-g294211-China-Hotels.html",
+      "https://www.tripadvisor.es/Hotels-g186216-United_Kingdom-Hotels.html",
+      "https://www.tripadvisor.es/Hotels-g187070-France-Hotels.html",
+      "https://www.tripadvisor.es/Hotels-g191-United_States-Hotels.html",
+      "https://www.tripadvisor.es/Hotels-g187275-Germany-Hotels.html",
+      "https://www.tripadvisor.es/Hotels-g188553-The_Netherlands-Hotels.html",
+      "https://www.tripadvisor.es/Hotels-g187323-Berlin-Hotels.html",
       "https://www.tripadvisor.es/Hotels-g187514-Madrid-Hotels.html",
       "https://www.tripadvisor.es/Hotels-g187497-Barcelona_Catalonia-Hotels.html",
       "https://www.tripadvisor.es/Hotels-g187472-Las_Palmas_de_Gran_Canaria_Gran_Canaria_Canary_Islands-Hotels.html",
@@ -32,8 +72,8 @@
       "https://www.tripadvisor.es/Hotels-g274887-Budapest_Central_Hungary-Hotels.html",
       "https://www.tripadvisor.es/Hotels-g189158-Lisbon_Lisbon_District_Central_Portugal-Hotels.html",
       "https://www.tripadvisor.es/Tourism-g189116-Faro_Faro_District_Algarve-Vacations.html",
-      "https://www.tripadvisor.es/Hotels-g488305-Soria_Province_of_Soria_Castile_and_Leon-Hotels.html"
-
+      "https://www.tripadvisor.es/Hotels-g488305-Soria_Province_of_Soria_Castile_and_Leon-Hotels.html",
+      "https://www.tripadvisor.es/Hotels-g4-Europe-Hotels.html"
     ],
     "ebay": [
       "https://www.ebay.es/b/Articulos-de-deportes/888/bn_16585546",
@@ -72,10 +112,8 @@
       "https://www.ebay.es/b/Articulos-coleccionables-de-Star-Wars/8675/bn_16586253",
       "https://www.ebay.es/b/Moda-Mujer/bn_7005614675",
       "https://www.ebay.es/b/Moda-Hombre/bn_7005615664"
-
-
     ],
-    "decathlon":[
+    "decathlon": [
       "https://www.decathlon.es/static/override/bajada-permanente/productList.json?_=1578046888577",
       "https://www.decathlon.es/static/override/bajada-permanente/productList.json?_=1578044145974",
       "https://www.decathlon.es/static/override/bajada-permanente/productList.json?_=1578046988514",
@@ -113,8 +151,6 @@
       "https://www.decathlon.es/static/override/bajada-permanente/productList.json?_=1578068599206",
       "https://www.decathlon.es/static/override/bajada-permanente/productList.json?_=1578068622754",
       "https://www.decathlon.es/static/override/bajada-permanente/productList.json?_=1578068643420"
-
-
     ]
   }
 }
