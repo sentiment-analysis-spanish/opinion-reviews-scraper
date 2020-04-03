@@ -163,6 +163,37 @@
       "https://www.decathlon.es/static/override/bajada-permanente/productList.json?_=1578068599206",
       "https://www.decathlon.es/static/override/bajada-permanente/productList.json?_=1578068622754",
       "https://www.decathlon.es/static/override/bajada-permanente/productList.json?_=1578068643420"
+    ],
+    "filmaffinity": [
+      "https://www.filmaffinity.com/es/cat_new_th_es.html",
+      "https://www.filmaffinity.com/es/cat_new_netflix.html",
+      "https://www.filmaffinity.com/es/vod_dvd.php?eid=movistar",
+      "https://www.filmaffinity.com/es/cat_upc_re_es.html",
+      "https://www.filmaffinity.com/es/topcat.php?id=upc_re_es",
+      "https://www.filmaffinity.com/es/cat_upc_th_es.html",
+      "https://www.filmaffinity.com/es/cat_new_sa_es.html",
+      "https://www.filmaffinity.com/es/cat_upc_sa_es.html",
+      "https://www.filmaffinity.com/es/cat_new_re_es.html",
+      "https://www.filmaffinity.com/es/cat_upc_re_es.html",
+      "https://www.filmaffinity.com/es/cat_upc_netflix.html",
+      "https://www.filmaffinity.com/es/cat_new_movistar_f.html",
+      "https://www.filmaffinity.com/es/cat_new_hbo_es.html",
+      "https://www.filmaffinity.com/es/cat_new_filmin.html",
+      "https://www.filmaffinity.com/es/cat_new_rakuten.html",
+      "https://www.filmaffinity.com/es/cat_new_amazon_es.html",
+      "https://www.filmaffinity.com/es/cat_disneyplus.html",
+      "https://www.filmaffinity.com/es/cat_apple_tv_plus.html",
+      "https://www.filmaffinity.com/es/cat_new_th_us.html",
+      "https://www.filmaffinity.com/es/cat_new_th_uk.html",
+      "https://www.filmaffinity.com/es/cat_new_th_fr.html",
+      "https://www.filmaffinity.com/es/catbygenre.php?id=upc_th_es",
+      "https://www.filmaffinity.com/es/category.php?id=latest_reviews",
+      "https://www.filmaffinity.com/es/cat_current_tv.html",
+      "https://www.filmaffinity.com/es/topgen.php?genre=TV_SE&country=&fromyear=&toyear=&nodoc",
+      "https://www.filmaffinity.com/es/topgen.php",
+      "https://www.filmaffinity.com/es/topcat_new_th_es.html",
+      "https://www.filmaffinity.com/es/topcat_new_sa_es.html",
+      "https://www.filmaffinity.com/es/boxoffice.php"
     ]
   }
 }
