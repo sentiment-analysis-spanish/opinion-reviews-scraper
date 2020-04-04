@@ -17,7 +17,7 @@ func (mainScraper MainScraperAllReviewSources) StartScraping(config models.Scrap
 	scraperDecathlon := DecathlonRecursiveAddScraperProduct{Config: config}
 	scrapertripadvisor := TripAdvisorRecursiveAddScraperProduct{Config: config}
 	scrapertripadvisorRestaurants := TripAdvisorRecursiveAddScraperProduct{Config: config}
-	scraperEltenedor := ElTenedorRecursiveAddScraperProduct{Config: config}
+	//scraperEltenedor := ElTenedorRecursiveAddScraperProduct{Config: config}
 	scraperFilmaffinity := FilmaffinityRecursiveAddScraperProduct{Config: config}
 
 	scrapAll := utils.StringInSlice("all", config.Scrapers)
@@ -27,8 +27,8 @@ func (mainScraper MainScraperAllReviewSources) StartScraping(config models.Scrap
 		var wg sync.WaitGroup
 
 		if utils.StringInSlice("eltenedor", config.Scrapers) || scrapAll {
-			go mainScraper.ScrapOneIteration(scraperEltenedor, "eltenedor", config, &wg)
-			wg.Add(1)
+			//go mainScraper.ScrapOneIteration(scraperEltenedor, "eltenedor", config, &wg)
+			//wg.Add(1)
 		}
 		if utils.StringInSlice("filmaffinity", config.Scrapers) || scrapAll {
 			go mainScraper.ScrapOneIteration(scraperFilmaffinity, "filmaffinity", config, &wg)
